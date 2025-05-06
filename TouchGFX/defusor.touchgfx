@@ -1,0 +1,500 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": -3,
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 36,
+              "Green": 35,
+              "Blue": 35
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn1",
+            "X": 40,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_MO8Z",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn2",
+            "X": 111,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_4K2D",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn3",
+            "X": 184,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_R96I",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn4",
+            "X": 260,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_IDFN",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn5",
+            "X": 333,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_19Y1",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn6",
+            "X": 407,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_TYMR",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn7",
+            "X": 481,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_14C1",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn8",
+            "X": 554,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_O6PC",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn9",
+            "X": 628,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_2SNE",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "btn0",
+            "X": 701,
+            "Y": 288,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_action.png",
+            "TextId": "__SingleUse_VEDI",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_outline_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "enterButton",
+            "X": 280,
+            "Y": 413,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_action.png",
+            "TextId": "__SingleUse_75TZ",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 79,
+              "Green": 77,
+              "Blue": 77
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_action.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 334,
+            "Y": 202,
+            "Width": 133,
+            "Height": 48,
+            "TextId": "__SingleUse_1Q0C",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "textAreaBuffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "title",
+            "X": 216,
+            "Y": 48,
+            "Width": 362,
+            "Height": 121,
+            "TextId": "__SingleUse_UIHD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "status",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number1"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number2"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number3"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn4"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number4"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn5"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number5"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn6"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number6"
+            }
+          },
+          {
+            "InteractionName": "Interaction7",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn7"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number7"
+            }
+          },
+          {
+            "InteractionName": "Interaction8",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn8"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number8"
+            }
+          },
+          {
+            "InteractionName": "Interaction9",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn9"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number9"
+            }
+          },
+          {
+            "InteractionName": "Interaction10",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "btn0"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "number0"
+            }
+          },
+          {
+            "InteractionName": "Interaction11",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "enterButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "enter"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "defusor",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "24": "LCDGPU2D",
+      "16": "LCDGPU2D"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [
+      {
+        "Key": 1,
+        "Name": "USER_BUTTON"
+      }
+    ],
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommand": "make -f ../gcc/Makefile flash",
+    "FlashTargetIntCommandOverride": "make -f ../gcc/Makefile intflash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32U5",
+    "SubFamily": "STM32U5F9/5G9",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m33",
+    "ProjectFile": "../STM32U5G9J-DK2.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [
+      "GPU2D"
+    ],
+    "AdditionalFeatures": [
+      "GPU2DVector",
+      "VectorFonts",
+      "Video"
+    ]
+  },
+  "Version": "4.24.0",
+  "CreatedBy": "4.24.0"
+}
