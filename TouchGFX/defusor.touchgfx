@@ -248,6 +248,30 @@
           },
           {
             "Type": "ButtonWithLabel",
+            "Name": "armButton",
+            "X": 280,
+            "Y": 413,
+            "Width": 240,
+            "Height": 50,
+            "Visible": false,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_action.png",
+            "TextId": "__SingleUse_QMWT",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 79,
+              "Green": 77,
+              "Blue": 77
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
             "Name": "enterButton",
             "X": 280,
             "Y": 413,
@@ -272,16 +296,14 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 334,
             "Y": 202,
-            "Width": 133,
+            "Width": 797,
             "Height": 48,
             "TextId": "__SingleUse_1Q0C",
             "TextRotation": "0",
             "Color": {
               "Red": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "textAreaBuffer",
               "UseBuffer": true,
@@ -291,21 +313,20 @@
           {
             "Type": "TextArea",
             "Name": "title",
-            "X": 216,
             "Y": 48,
-            "Width": 362,
+            "Width": 797,
             "Height": 121,
             "TextId": "__SingleUse_UIHD",
             "TextRotation": "0",
             "Color": {
               "Red": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "status",
               "UseBuffer": true,
               "BufferSize": 10
-            }
+            },
+            "Fadeable": true
           }
         ],
         "Interactions": [
@@ -428,6 +449,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "enter"
+            }
+          },
+          {
+            "InteractionName": "Interaction12",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "armButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "arm"
             }
           }
         ]

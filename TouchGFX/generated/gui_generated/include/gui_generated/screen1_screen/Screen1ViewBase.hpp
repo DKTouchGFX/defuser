@@ -10,6 +10,8 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/mixins/FadeAnimator.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -65,6 +67,10 @@ public:
     {
         // Override and implement this function in Screen1
     }
+    virtual void arm()
+    {
+        // Override and implement this function in Screen1
+    }
 
 protected:
     FrontendApplication& application() {
@@ -86,9 +92,10 @@ protected:
     touchgfx::ButtonWithLabel btn8;
     touchgfx::ButtonWithLabel btn9;
     touchgfx::ButtonWithLabel btn0;
+    touchgfx::ButtonWithLabel armButton;
     touchgfx::ButtonWithLabel enterButton;
     touchgfx::TextAreaWithOneWildcard textArea1;
-    touchgfx::TextAreaWithOneWildcard title;
+    touchgfx::FadeAnimator< touchgfx::TextAreaWithOneWildcard > title;
 
     /*
      * Wildcard Buffers

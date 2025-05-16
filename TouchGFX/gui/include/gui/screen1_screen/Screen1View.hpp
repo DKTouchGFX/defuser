@@ -12,11 +12,6 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    virtual void handleTickEvent();
-    int tickCounter=50;
-    int codeEntered=0;
-    int digitsEntered=0;
-
     virtual void enterDigit(int digit);
     virtual void number1();
     virtual void number2();
@@ -29,7 +24,18 @@ public:
     virtual void number9();
     virtual void number0();
     virtual void enter();
+    virtual void arm();
 protected:
+
+private:
+    int currentAlpha, nextAlpha;
+
+    int codeEntered, digitsEntered;
+
+    void setTitle(const char * text, touchgfx::colortype color);
+
+    void fadeAnimationCallbackHandler(const touchgfx::FadeAnimator<touchgfx::TextAreaWithOneWildcard>& src);
+    touchgfx::Callback<Screen1View, const touchgfx::FadeAnimator<touchgfx::TextAreaWithOneWildcard>&> fadeAnimationCallback;
 };
 
 #endif // SCREEN1VIEW_HPP

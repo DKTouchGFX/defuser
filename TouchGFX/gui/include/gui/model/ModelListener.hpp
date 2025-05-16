@@ -14,6 +14,8 @@ public:
     {
         model = m;
     }
+
+    virtual void codeChanged(int code) {}
 protected:
     Model* model;
 };

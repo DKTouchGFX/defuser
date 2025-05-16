@@ -1,7 +1,16 @@
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <touchgfx/Color.hpp>
 
-Screen1View::Screen1View()
+#define FADE_ANIMATION_DURATION 60
+#define GREEN_COLOR 			touchgfx::Color::getColorFromRGB(0, 255, 0)
+#define RED_COLOR 				touchgfx::Color::getColorFromRGB(255, 0, 0)
+
+Screen1View::Screen1View() :
+	currentAlpha(255),
+	nextAlpha(50),
+	codeEntered(0),
+	digitsEntered(0),
+	fadeAnimationCallback(this, &Screen1View::fadeAnimationCallbackHandler)
 {
 
 }
@@ -9,6 +18,9 @@ Screen1View::Screen1View()
 void Screen1View::setupScreen()
 {
     Screen1ViewBase::setupScreen();
+
+	title.setFadeAnimationEndedAction(fadeAnimationCallback);
+	title.startFadeAnimation(nextAlpha, FADE_ANIMATION_DURATION, &EasingEquations::linearEaseNone);
 }
 
 void Screen1View::tearDownScreen()
@@ -16,61 +28,18 @@ void Screen1View::tearDownScreen()
     Screen1ViewBase::tearDownScreen();
 }
 
-void Screen1View::handleTickEvent()
-{
-	if(digitsEntered==1)
-	{
-		Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d",codeEntered/1000);
-		textArea1.resizeToCurrentTextWithAlignment();
-		textArea1.invalidate();
-	}
-	if(digitsEntered==2)
-	{
-		Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d",codeEntered/100);
-		textArea1.resizeToCurrentTextWithAlignment();
-		textArea1.invalidate();
-	}
-	if(digitsEntered==3)
-	{
-		Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d",codeEntered/10);
-		textArea1.resizeToCurrentTextWithAlignment();
-		textArea1.invalidate();
-	}
-	if(digitsEntered==4)
-	{
-		Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d",codeEntered);
-		textArea1.resizeToCurrentTextWithAlignment();
-		textArea1.invalidate();
-	}
-
-	title.setAlpha(tickCounter);
-	title.invalidate();
-	tickCounter++;
-	if(tickCounter>255)
-		tickCounter=50;
-}
-
 void Screen1View::enterDigit(int digit)
 {
-	switch(digitsEntered)
+	if (4 <= digitsEntered)
 	{
-	case 0:
-		codeEntered=digit*1000;
-		break;
-	case 1:
-		codeEntered += digit*100;
-		break;
-	case 2:
-		codeEntered += digit*10;
-		break;
-	case 3:
-		codeEntered += digit;
-		break;
-
-	default:
-	break;
+		return;
 	}
+
+	codeEntered = codeEntered * 10 + digit;
 	digitsEntered++;
+
+	Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%0*d", digitsEntered, codeEntered);
+	textArea1.invalidate();
 }
 
 
@@ -85,57 +54,69 @@ void Screen1View::number8() { enterDigit(8); }
 void Screen1View::number9() { enterDigit(9); }
 void Screen1View::number0() { enterDigit(0); }
 
-void Screen1View::enter() {
-	if(codeEntered!=3486)
-	{
-		codeEntered=0;
-		digitsEntered=0;
-		Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "");
-		textArea1.resizeToCurrentText();
-		textArea1.invalidate();
-	}
-	else
-	{
-		btn0.setTouchable(false);
-		btn1.setTouchable(false);
-		btn2.setTouchable(false);
-		btn3.setTouchable(false);
-		btn4.setTouchable(false);
-		btn5.setTouchable(false);
-		btn6.setTouchable(false);
-		btn7.setTouchable(false);
-		btn8.setTouchable(false);
-		btn9.setTouchable(false);
-		btn0.setAlpha(0);
-		btn1.setAlpha(0);
-		btn2.setAlpha(0);
-		btn3.setAlpha(0);
-		btn4.setAlpha(0);
-		btn5.setAlpha(0);
-		btn6.setAlpha(0);
-		btn7.setAlpha(0);
-		btn8.setAlpha(0);
-		btn9.setAlpha(0);
-		enterButton.setTouchable(false);
-		enterButton.setAlpha(0);
-		btn0.invalidate();
-		btn1.invalidate();
-		btn2.invalidate();
-		btn3.invalidate();
-		btn4.invalidate();
-		btn5.invalidate();
-		btn6.invalidate();
-		btn7.invalidate();
-		btn8.invalidate();
-		btn9.invalidate();
-		enterButton.invalidate();
+void Screen1View::enter()
+{
+	digitsEntered = 0;
+	Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "");
+	textArea1.invalidate();
 
-		textArea1.setAlpha(0);
-
-		title.setColor(touchgfx::Color::getColorFromRGB(0,255,0));
-		Unicode::snprintf(titleBuffer, TEXTAREA1_SIZE, "DISARMED");
-		title.resizeToCurrentTextWithAlignment();
-		title.invalidate();
+	if(presenter->getCode() != codeEntered)
+	{
+		codeEntered = 0;
+		return;
 	}
+
+	setTitle("DISARMED", GREEN_COLOR);
+
+	codeEntered = 0;
+
+	enterButton.setTouchable(false);
+	enterButton.setVisible(false);
+	enterButton.invalidate();
+
+	armButton.setTouchable(true);
+	armButton.setVisible(true);
+	armButton.invalidate();
 }
 
+void Screen1View::arm()
+{
+	if (4 > digitsEntered)
+	{
+		return;
+	}
+
+	presenter->setCode(codeEntered);
+
+	setTitle("ARMED", RED_COLOR);
+
+	codeEntered=0;
+	digitsEntered=0;
+
+	Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "");
+	textArea1.invalidate();
+
+	enterButton.setTouchable(true);
+	enterButton.setVisible(true);
+	enterButton.invalidate();
+
+	armButton.setTouchable(false);
+	armButton.setVisible(false);
+	armButton.invalidate();
+}
+
+void Screen1View::setTitle(const char * text, touchgfx::colortype color)
+{
+	title.setColor(color);
+	Unicode::snprintf(titleBuffer, TEXTAREA1_SIZE, text);
+	title.invalidate();
+}
+
+void Screen1View::fadeAnimationCallbackHandler(const touchgfx::FadeAnimator<touchgfx::TextAreaWithOneWildcard>& src)
+{
+	int tmp = currentAlpha;
+	currentAlpha = nextAlpha;
+	nextAlpha = tmp;
+
+	title.startFadeAnimation(nextAlpha, FADE_ANIMATION_DURATION, &EasingEquations::linearEaseNone);
+}
