@@ -97,6 +97,15 @@ Screen1ViewBase::Screen1ViewBase() :
     btn0.setAction(buttonCallback);
     add(btn0);
 
+    armButton.setXY(280, 413);
+    armButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    armButton.setLabelText(touchgfx::TypedText(T___SINGLEUSE_QMWT));
+    armButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    armButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(79, 77, 77));
+    armButton.setVisible(false);
+    armButton.setAction(buttonCallback);
+    add(armButton);
+
     enterButton.setXY(280, 413);
     enterButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     enterButton.setLabelText(touchgfx::TypedText(T___SINGLEUSE_75TZ));
@@ -105,21 +114,19 @@ Screen1ViewBase::Screen1ViewBase() :
     enterButton.setAction(buttonCallback);
     add(enterButton);
 
-    textArea1.setXY(334, 202);
+    textArea1.setPosition(0, 202, 797, 48);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     textArea1.setLinespacing(0);
     Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", touchgfx::TypedText(T_TEXTAREABUFFER).getText());
     textArea1.setWildcard(textArea1Buffer);
-    textArea1.resizeToCurrentText();
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1Q0C));
     add(textArea1);
 
-    title.setXY(216, 48);
+    title.setPosition(0, 48, 797, 121);
     title.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     title.setLinespacing(0);
     Unicode::snprintf(titleBuffer, TITLE_SIZE, "%s", touchgfx::TypedText(T_STATUS).getText());
     title.setWildcard(titleBuffer);
-    title.resizeToCurrentText();
     title.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UIHD));
     add(title);
 }
@@ -212,5 +219,12 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When enterButton clicked call virtual function
         //Call enter
         enter();
+    }
+    if (&src == &armButton)
+    {
+        //Interaction12
+        //When armButton clicked call virtual function
+        //Call arm
+        arm();
     }
 }

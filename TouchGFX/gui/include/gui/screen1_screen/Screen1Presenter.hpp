@@ -27,6 +27,9 @@ public:
 
     virtual ~Screen1Presenter() {}
 
+    virtual void setCode(int code);
+    virtual int getCode();
+
 private:
     Screen1Presenter();
 

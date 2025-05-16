@@ -16,3 +16,13 @@ void Screen1Presenter::deactivate()
 {
 
 }
+
+void Screen1Presenter::setCode(int code)
+{
+    model->setCode(code);
+}
+
+int Screen1Presenter::getCode()
+{
+    return model->getCode();
+}
