@@ -69,10 +69,6 @@ void Screen1View::enter()
 	setTitle("DISARMED", GREEN_COLOR);
 
 	codeEntered = 0;
-	digitsEntered = 0;
-
-	Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "");
-	textArea1.invalidate();
 
 	enterButton.setTouchable(false);
 	enterButton.setVisible(false);
